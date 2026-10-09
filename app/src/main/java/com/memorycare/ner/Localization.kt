@@ -1,0 +1,355 @@
+package com.memorycare.ner
+
+object Localization {
+
+    private val translations = mapOf(
+        "app_title" to mapOf(
+            AppLanguage.ENGLISH to "NER-MemoryCare",
+            AppLanguage.HINDI to "एनईआर-मेमोरीकेयर",
+            AppLanguage.ASSAMESE to "এনইআৰ-মেম'ৰিকেয়াৰ",
+            AppLanguage.BENGALI to "এনইআর-মেমোরিকেয়ার",
+        ),
+        "app_subtitle" to mapOf(
+            AppLanguage.ENGLISH to "Memory support for everyday life",
+            AppLanguage.HINDI to "दैनिक जीवन के लिए स्मृति सहायता",
+            AppLanguage.ASSAMESE to "দৈনন্দিন জীৱনৰ বাবে স্মৃতি সহায়",
+            AppLanguage.BENGALI to "দৈনন্দিন জীবনের জন্য স্মৃতি সহায়তা",
+        ),
+        "patient" to mapOf(
+            AppLanguage.ENGLISH to "PATIENT",
+            AppLanguage.HINDI to "मरीज़ (रोगी)",
+            AppLanguage.ASSAMESE to "ৰোগী",
+            AppLanguage.BENGALI to "রোগী",
+        ),
+        "caregiver" to mapOf(
+            AppLanguage.ENGLISH to "CAREGIVER",
+            AppLanguage.HINDI to "देखभालकर्ता",
+            AppLanguage.ASSAMESE to "যত্নলোৱা ব্যক্তি",
+            AppLanguage.BENGALI to "যত্নশীল ব্যক্তি",
+        ),
+        "good_day" to mapOf(
+            AppLanguage.ENGLISH to "Good day!",
+            AppLanguage.HINDI to "नमस्ते!",
+            AppLanguage.ASSAMESE to "নমস্কাৰ!",
+            AppLanguage.BENGALI to "নমস্কার!",
+        ),
+        "exercise_prompt" to mapOf(
+            AppLanguage.ENGLISH to "Let's exercise your memory today.",
+            AppLanguage.HINDI to "आइए आज आपकी याददाश्त का अभ्यास करें।",
+            AppLanguage.ASSAMESE to "আহক আজি আপোনাৰ স্মৃতিশক্তি অনুশীলন কৰোঁ।",
+            AppLanguage.BENGALI to "আসুন আজ আপনার স্মৃতিশক্তি অনুশীলন করি।",
+        ),
+        "todays_activity" to mapOf(
+            AppLanguage.ENGLISH to "TODAY'S ACTIVITY",
+            AppLanguage.HINDI to "आज की गतिविधि",
+            AppLanguage.ASSAMESE to "আজিৰ কাৰ্যসূচী",
+            AppLanguage.BENGALI to "আজকের কাজ",
+        ),
+        "recommended" to mapOf(
+            AppLanguage.ENGLISH to "Recommended",
+            AppLanguage.HINDI to "अनुशंसित",
+            AppLanguage.ASSAMESE to "পৰামৰ্শিত",
+            AppLanguage.BENGALI to "प्रस्तাবিত",
+        ),
+        "completed" to mapOf(
+            AppLanguage.ENGLISH to "✓ Completed",
+            AppLanguage.HINDI to "✓ पूरा हुआ",
+            AppLanguage.ASSAMESE to "✓ সম্পূৰ্ণ",
+            AppLanguage.BENGALI to "✓ সম্পন্ন",
+        ),
+        "cognitive_games" to mapOf(
+            AppLanguage.ENGLISH to "Cognitive Games",
+            AppLanguage.HINDI to "संज्ञानात्मक खेल",
+            AppLanguage.ASSAMESE to "জ্ঞানমূলক খেল",
+            AppLanguage.BENGALI to "জ্ঞানমূলক খেলা",
+        ),
+        "choose_activity" to mapOf(
+            AppLanguage.ENGLISH to "Choose a memory activity for today.",
+            AppLanguage.HINDI to "आज के लिए एक स्मृति गतिविधि चुनें।",
+            AppLanguage.ASSAMESE to "আজিৰ বাবে এটা স্মৃতি কাৰ্যসূচী বাছক।",
+            AppLanguage.BENGALI to "আজকের জন্য একটি স্মৃতি কাজ বাছুন।",
+        ),
+        "start_game" to mapOf(
+            AppLanguage.ENGLISH to "▶ START GAME",
+            AppLanguage.HINDI to "▶ खेल शुरू करें",
+            AppLanguage.ASSAMESE to "▶ খেল আৰম্ভ কৰক",
+            AppLanguage.BENGALI to "▶ খেলা শুরু করুন",
+        ),
+        "reminders" to mapOf(
+            AppLanguage.ENGLISH to "Reminders",
+            AppLanguage.HINDI to "स्मरणपत्र",
+            AppLanguage.ASSAMESE to "মনত পেলাই দিয়া সূচী",
+            AppLanguage.BENGALI to "স্মরণপত্র",
+        ),
+        "progress" to mapOf(
+            AppLanguage.ENGLISH to "Progress",
+            AppLanguage.HINDI to "प्रगति",
+            AppLanguage.ASSAMESE to "অগ্রগতি",
+            AppLanguage.BENGALI to "অগ্রগতি",
+        ),
+        "memories" to mapOf(
+            AppLanguage.ENGLISH to "Memories",
+            AppLanguage.HINDI to "यादें",
+            AppLanguage.ASSAMESE to "স্মৃতিসমূহ",
+            AppLanguage.BENGALI to "স্মৃতিমালা",
+        ),
+        "settings" to mapOf(
+            AppLanguage.ENGLISH to "Settings",
+            AppLanguage.HINDI to "सेटिंग्स",
+            AppLanguage.ASSAMESE to "সেটিংছ",
+            AppLanguage.BENGALI to "সেটিংস",
+        ),
+        "back_to_mode_select" to mapOf(
+            AppLanguage.ENGLISH to "← Mode Select",
+            AppLanguage.HINDI to "← मोड चयन",
+            AppLanguage.ASSAMESE to "← মোড বাছনি",
+            AppLanguage.BENGALI to "← মোড বাছাই",
+        ),
+        "back_to_home" to mapOf(
+            AppLanguage.ENGLISH to "← Back to Home",
+            AppLanguage.HINDI to "← होम पर वापस",
+            AppLanguage.ASSAMESE to "← মূল গৃহলৈ",
+            AppLanguage.BENGALI to "← হোমে ফিরুন",
+        ),
+        "back" to mapOf(
+            AppLanguage.ENGLISH to "← Back",
+            AppLanguage.HINDI to "← वापस",
+            AppLanguage.ASSAMESE to "← পিছলৈ",
+            AppLanguage.BENGALI to "← পেছনে",
+        ),
+        "remember_route" to mapOf(
+            AppLanguage.ENGLISH to "Remember My Route",
+            AppLanguage.HINDI to "मेरा रास्ता याद रखें",
+            AppLanguage.ASSAMESE to "মোৰ পথ মনত ৰাখক",
+            AppLanguage.BENGALI to "আমার পথ মনে রাখুন",
+        ),
+        "flip_match" to mapOf(
+            AppLanguage.ENGLISH to "Flip & Match",
+            AppLanguage.HINDI to "कार्ड पलटें और मिलाएं",
+            AppLanguage.ASSAMESE to "কাৰ্ড ওলোটাওক আৰু মিলিয়াওক",
+            AppLanguage.BENGALI to "কার্ড উল্টান ও মেলান",
+        ),
+        "completed_today" to mapOf(
+            AppLanguage.ENGLISH to "Completed today",
+            AppLanguage.HINDI to "आज पूरा हुआ",
+            AppLanguage.ASSAMESE to "আজি সম্পূৰ্ণ হ'ল",
+            AppLanguage.BENGALI to "আজ সম্পন্ন হয়েছে",
+        ),
+        "review" to mapOf(
+            AppLanguage.ENGLISH to "Review",
+            AppLanguage.HINDI to "समीक्षा",
+            AppLanguage.ASSAMESE to "পুনৰীক্ষণ",
+            AppLanguage.BENGALI to "পর্যালোচনা",
+        ),
+        "start" to mapOf(
+            AppLanguage.ENGLISH to "Start",
+            AppLanguage.HINDI to "शुरू करें",
+            AppLanguage.ASSAMESE to "আৰম্ভ কৰক",
+            AppLanguage.BENGALI to "শুরু করুন",
+        ),
+        "great_work" to mapOf(
+            AppLanguage.ENGLISH to "Great work!",
+            AppLanguage.HINDI to "बहुत बढ़िया!",
+            AppLanguage.ASSAMESE to "বৰ ধুনীয়া কাম!",
+            AppLanguage.BENGALI to "খুব ভালো কাজ!",
+        ),
+        "route_completed_today" to mapOf(
+            AppLanguage.ENGLISH to "Remember My Route completed for today.",
+            AppLanguage.HINDI to "मेरा रास्ता आज के लिए पूरा हो गया है।",
+            AppLanguage.ASSAMESE to "মোৰ পথ কাৰ্যসূচী আজিৰ বাবে সম্পূৰ্ণ হ'ল।",
+            AppLanguage.BENGALI to "আমার পথ কাজ আজকের জন্য সম্পন্ন হয়েছে।",
+        ),
+        "next_level" to mapOf(
+            AppLanguage.ENGLISH to "Next Level →",
+            AppLanguage.HINDI to "अगला स्तर →",
+            AppLanguage.ASSAMESE to "পৰৱৰ্তী স্তৰ →",
+            AppLanguage.BENGALI to "পরবর্তী স্তর →",
+        ),
+        "finish_game" to mapOf(
+            AppLanguage.ENGLISH to "Finish Game ✓",
+            AppLanguage.HINDI to "खेल पूरा करें ✓",
+            AppLanguage.ASSAMESE to "খেল সমাপ্তি ✓",
+            AppLanguage.BENGALI to "খেলা শেষ করুন ✓",
+        ),
+        "talk_to_memorycare" to mapOf(
+            AppLanguage.ENGLISH to "Talk to MemoryCare",
+            AppLanguage.HINDI to "मेमोरीकेयर से बात करें",
+            AppLanguage.ASSAMESE to "মেম'ৰিকেয়াৰৰ সৈতে কথা কওক",
+            AppLanguage.BENGALI to "মেমোরিকেয়ারের সাথে কথা বলুন",
+        ),
+        "tap_and_speak" to mapOf(
+            AppLanguage.ENGLISH to "Tap and speak a command",
+            AppLanguage.HINDI to "टैप करें और बोलें",
+            AppLanguage.ASSAMESE to "টিপি কথা কওক",
+            AppLanguage.BENGALI to "ট্যাপ করে কথা বলুন",
+        ),
+        "listening" to mapOf(
+            AppLanguage.ENGLISH to "🔴 Listening...",
+            AppLanguage.HINDI to "🔴 सुन रहा हूँ...",
+            AppLanguage.ASSAMESE to "🔴 শুনি থকা হৈছে...",
+            AppLanguage.BENGALI to "🔴 শুনছি...",
+        ),
+        "understanding" to mapOf(
+            AppLanguage.ENGLISH to "⏳ Understanding...",
+            AppLanguage.HINDI to "⏳ समझ रहा हूँ...",
+            AppLanguage.ASSAMESE to "⏳ বুজি থকা হৈছে...",
+            AppLanguage.BENGALI to "⏳ বুঝছি...",
+        ),
+        "response" to mapOf(
+            AppLanguage.ENGLISH to "🔊 Response",
+            AppLanguage.HINDI to "🔊 उत्तर",
+            AppLanguage.ASSAMESE to "🔊 প্ৰতিক্ৰিয়া",
+            AppLanguage.BENGALI to "🔊 প্রতিক্রিয়া",
+        ),
+        "repeat" to mapOf(
+            AppLanguage.ENGLISH to "↻ Repeat",
+            AppLanguage.HINDI to "↻ दोहराएं",
+            AppLanguage.ASSAMESE to "↻ পুনৰ কোৱা",
+            AppLanguage.BENGALI to "↻ আবার বলো",
+        ),
+        "stop" to mapOf(
+            AppLanguage.ENGLISH to "⏹ Stop",
+            AppLanguage.HINDI to "⏹ रोकें",
+            AppLanguage.ASSAMESE to "⏹ ৰখা",
+            AppLanguage.BENGALI to "⏹ থামো",
+        ),
+        "todays_reminders" to mapOf(
+            AppLanguage.ENGLISH to "⏰ Today's Reminders",
+            AppLanguage.HINDI to "⏰ आज के स्मरणपत्र",
+            AppLanguage.ASSAMESE to "⏰ আজিৰ মনত পেলোৱা সূচী",
+            AppLanguage.BENGALI to "⏰ আজকের স্মরণপত্র",
+        ),
+        "daily_schedule" to mapOf(
+            AppLanguage.ENGLISH to "Your daily schedule & medicine time",
+            AppLanguage.HINDI to "आपकी दैनिक दिनचर्या और दवा का समय",
+            AppLanguage.ASSAMESE to "আপোনাৰ দৈনন্দিন সূচী আৰু ঔষধৰ সময়",
+            AppLanguage.BENGALI to "আপনার দৈনন্দিন সময়সূচী ও ওষুধের সময়",
+        ),
+        "done" to mapOf(
+            AppLanguage.ENGLISH to "✓ Done",
+            AppLanguage.HINDI to "✓ हो गया",
+            AppLanguage.ASSAMESE to "✓ কৰা হ'ল",
+            AppLanguage.BENGALI to "✓ সম্পন্ন",
+        ),
+        "snooze" to mapOf(
+            AppLanguage.ENGLISH to "⏰ Snooze",
+            AppLanguage.HINDI to "⏰ स्नूज़",
+            AppLanguage.ASSAMESE to "⏰ পাছলৈ ৰখা",
+            AppLanguage.BENGALI to "⏰ স্নুজ",
+        ),
+        "your_memory_progress" to mapOf(
+            AppLanguage.ENGLISH to "📈 Your Memory Progress",
+            AppLanguage.HINDI to "📈 आपकी स्मृति प्रगति",
+            AppLanguage.ASSAMESE to "📈 আপোনাৰ স্মৃতি অগ্ৰগতি",
+            AppLanguage.BENGALI to "📈 আপনার স্মৃতি অগ্রগতি",
+        ),
+        "mind_active_praise" to mapOf(
+            AppLanguage.ENGLISH to "Great job keeping your mind active!",
+            AppLanguage.HINDI to "दिमाग को सक्रिय रखने के लिए बहुत बढ़िया काम!",
+            AppLanguage.ASSAMESE to "মনক সক্ৰিয় ৰখাৰ বাবে বহুত ভাল কাম!",
+            AppLanguage.BENGALI to "মন সক্রিয় রাখার জন্য দারুণ কাজ!",
+        ),
+        "personal_memories" to mapOf(
+            AppLanguage.ENGLISH to "🖼️ Personal Memories",
+            AppLanguage.HINDI to "🖼️ व्यक्तिगत यादें",
+            AppLanguage.ASSAMESE to "🖼️ ব্যক্তিগত স্মৃতিসমূহ",
+            AppLanguage.BENGALI to "🖼️ ব্যক্তিগত স্মৃতিমালা",
+        ),
+        "familiar_photos" to mapOf(
+            AppLanguage.ENGLISH to "Familiar family photos and special stories",
+            AppLanguage.HINDI to "पारिवारिक तस्वीरें और विशेष कहानियाँ",
+            AppLanguage.ASSAMESE to "পৰিচিত পৰিয়ালৰ ছবি আৰু বিশেষ কাহিনী",
+            AppLanguage.BENGALI to "পরিচিত পারিবারিক ছবি ও বিশেষ গল্প",
+        ),
+        "settings_accessibility" to mapOf(
+            AppLanguage.ENGLISH to "⚙️ Settings & Accessibility",
+            AppLanguage.HINDI to "⚙️ सेटिंग्स और पहुंच",
+            AppLanguage.ASSAMESE to "⚙️ সেটিংছ আৰু ব্যৱহাৰযোগ্যতা",
+            AppLanguage.BENGALI to "⚙️ সেটিংস ও প্রবেশগম্যতা",
+        ),
+        "preferred_language" to mapOf(
+            AppLanguage.ENGLISH to "🌐 Preferred Language / भाषा",
+            AppLanguage.HINDI to "🌐 पसंद की भाषा / Preferred Language",
+            AppLanguage.ASSAMESE to "🌐 পছন্দৰ ভাষা / Preferred Language",
+            AppLanguage.BENGALI to "🌐 পছন্দের ভাষা / Preferred Language",
+        ),
+        "text_font_size" to mapOf(
+            AppLanguage.ENGLISH to "🔤 Text & Font Size",
+            AppLanguage.HINDI to "🔤 टेक्स्ट और फ़ॉन्ट का आकार",
+            AppLanguage.ASSAMESE to "🔤 পাঠ্যৰ আকাৰ",
+            AppLanguage.BENGALI to "🔤 টেক্সটের আকার",
+        ),
+        "accessibility_controls" to mapOf(
+            AppLanguage.ENGLISH to "♿ Accessibility Controls",
+            AppLanguage.HINDI to "♿ पहुंच नियंत्रण",
+            AppLanguage.ASSAMESE to "♿ বিশেষ সুবিধা নিয়ন্ত্ৰণ",
+            AppLanguage.BENGALI to "♿ প্রবেশগম্যতা নিয়ন্ত্রণ",
+        ),
+
+        // Game TTS Strings
+        "flip_match_opening" to mapOf(
+            AppLanguage.ENGLISH to "Let's play Flip and Match. Flip two cards and try to find the matching pair. Ready? Let's begin.",
+            AppLanguage.HINDI to "आइए फ्लिप और मैच खेलें। दो कार्ड पलटें और मिलती हुई जोड़ी खोजें। क्या आप तैयार हैं? शुरू करते हैं।",
+            AppLanguage.ASSAMESE to "আহক ফ্লিপ আৰু মেচ খেলোঁ। দুখন কাৰ্ড ওলোটাওক আৰু মিলিয়াওক। প্ৰস্তুত? আৰম্ভ কৰোঁ।",
+            AppLanguage.BENGALI to "আসুন ফ্লিপ ও ম্যাচ খেলি। দুটি কার্ড উল্টান এবং জোড়া মেলান। প্রস্তুত? শুরু করি।",
+        ),
+        "match_found" to mapOf(
+            AppLanguage.ENGLISH to "Great! You found a match.",
+            AppLanguage.HINDI to "बहुत बढ़िया! आपको एक जोड़ी मिल गई।",
+            AppLanguage.ASSAMESE to "বৰ ধুনীয়া! আপুনি এটা মিল বিচাৰি পালে।",
+            AppLanguage.BENGALI to "দারুণ! আপনি একটি জোড়া পেয়েছেন।",
+        ),
+        "wrong_match" to mapOf(
+            AppLanguage.ENGLISH to "Not a match. Try another pair.",
+            AppLanguage.HINDI to "मैच नहीं हुआ। दूसरी जोड़ी का प्रयास करें।",
+            AppLanguage.ASSAMESE to "মিল নাই হোৱা। আন এযোৰ চেষ্টা কৰক।",
+            AppLanguage.BENGALI to "মেলেনি। অন্য জোড়া চেষ্টা করুন।",
+        ),
+        "flip_game_completion" to mapOf(
+            AppLanguage.ENGLISH to "Well done! You completed today's memory game.",
+            AppLanguage.HINDI to "बहुत बढ़िया! आपने आज का मेमोरी गेम पूरा कर लिया।",
+            AppLanguage.ASSAMESE to "বৰ সুন্দৰ! আপুনি আজিৰ মেম'ৰি খেল সম্পূৰ্ণ কৰিলে।",
+            AppLanguage.BENGALI to "শাবাশ! আপনি আজকের স্মৃতি খেলা শেষ করেছেন।",
+        ),
+        "route_game_opening" to mapOf(
+            AppLanguage.ENGLISH to "Let's play Remember My Route. Watch the pictures carefully and remember their order. Ready? Let's begin.",
+            AppLanguage.HINDI to "आइए मेरा रास्ता याद रखें खेलें। चित्रों को ध्यान से देखें और उनका क्रम याद रखें। क्या आप तैयार हैं? शुरू करते हैं।",
+            AppLanguage.ASSAMESE to "আহক মোৰ পথ মনত ৰাখক খেলোঁ। ছবিবোৰ মনোযোগেৰে চাওক আৰু ক্ৰম মনত ৰাখক। প্ৰস্তুত? আৰম্ভ কৰোঁ।",
+            AppLanguage.BENGALI to "আসুন আমার পথ মনে রাখুন খেলি। ছবিগুলো মনোযোগ দিয়ে দেখুন এবং ক্রম মনে রাখুন। প্রস্তুত? শুরু করি।",
+        ),
+        "route_recall_prompt" to mapOf(
+            AppLanguage.ENGLISH to "Now show me the pictures in the order you remember. Take your time.",
+            AppLanguage.HINDI to "अब मुझे चित्रों को याद रखे गए क्रम में दिखाएं। अपना समय लें।",
+            AppLanguage.ASSAMESE to "এতিয়া আপুনি মনত ৰখা ক্ৰমত ছবিবোৰ দেখুৱাওক। লাহে লাহে কৰক।",
+            AppLanguage.BENGALI to "এখন আপনি মনে রাখা ক্রমে ছবিগুলো দেখান। ধীরে সুস্থে করুন।",
+        ),
+        "route_correct" to mapOf(
+            AppLanguage.ENGLISH to "Excellent! You remembered the route.",
+            AppLanguage.HINDI to "उत्कृष्ट! आपने रास्ता याद रखा।",
+            AppLanguage.ASSAMESE to "অসাধারণ! আপুনি পথটো মনত ৰাখিলে।",
+            AppLanguage.BENGALI to "দারুণ! আপনি পথটি মনে রেখেছেন।",
+        ),
+        "route_incorrect" to mapOf(
+            AppLanguage.ENGLISH to "That's okay. Let's try again.",
+            AppLanguage.HINDI to "कोई बात नहीं। आइए फिर से प्रयास करें।",
+            AppLanguage.ASSAMESE to "একো নাই। আহক পুনৰ চেষ্টা কৰোঁ।",
+            AppLanguage.BENGALI to "ঠিক আছে। আসুন আবার চেষ্টা করি।",
+        ),
+        "route_game_completion" to mapOf(
+            AppLanguage.ENGLISH to "Well done! You completed today's route activity.",
+            AppLanguage.HINDI to "बहुत बढ़िया! आपने आज की रूट गतिविधि पूरी कर ली।",
+            AppLanguage.ASSAMESE to "বৰ সুন্দৰ! আপুনি আজিৰ পথ কাৰ্যসূচী সম্পূৰ্ণ কৰিলে।",
+            AppLanguage.BENGALI to "শাবাশ! আপনি আজকের পথ কাজ শেষ করেছেন।",
+        ),
+        "hint_prompt" to mapOf(
+            AppLanguage.ENGLISH to "Here's a hint. Try to remember the card you saw earlier.",
+            AppLanguage.HINDI to "यहाँ एक संकेत है। उस कार्ड को याद करने का प्रयास करें जो आपने पहले देखा था।",
+            AppLanguage.ASSAMESE to "ইযাত এটা ইংগিত দিয়া হৈছে। আগতে দেখা কাৰ্ডখন মনত পেলাবলৈ চেষ্টা কৰক।",
+            AppLanguage.BENGALI to "এখানে একটি ইঙ্গিত দেওয়া হল। আগে দেখা কার্ডটি মনে করার চেষ্টা করুন।",
+        ),
+    )
+
+    fun tr(key: String, lang: AppLanguage = AppLanguage.ENGLISH): String {
+        return translations[key]?.get(lang) ?: translations[key]?.get(AppLanguage.ENGLISH) ?: key
+    }
+}
